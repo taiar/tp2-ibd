@@ -41,7 +41,7 @@ class Migration_Reclamacao extends CI_Migration {
                     "type" => "date",
                     "null" => TRUE,
             ),
-            "DataFInalizado" => array(
+            "DataFinalizado" => array(
                     "type" => "date",
                     "null" => TRUE,
             ),
