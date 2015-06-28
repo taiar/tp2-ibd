@@ -4,7 +4,7 @@
 
   Usuario(idUsuario, Sexo, FaixaEtaria)
 
-  Reclamacao(idUsuario, idEmpresa, idlocal, CodReclamacao, AnoAbertura, MesAbertura, DataAbertura, DataResposta, DataFInalizado, TempoResposta, Assunto, idProblema, ComoComprouContratou, ProcurouEmpresa, Respondida, Situacao, AvalicaoReclamacao, NotaDoConsumidor)
+  Reclamacao(idUsuario, idEmpresa, idlocal, CodReclamacao, AnoAbertura, MesAbertura, DataAbertura, DataResposta, DataFinalizado, TempoResposta, Assunto, idProblema, ComoComprouContratou, ProcurouEmpresa, Respondida, Situacao, AvalicaoReclamacao, NotaDoConsumidor)
 
   Problema(idProblema, GrupoProblema, Problema)
 
