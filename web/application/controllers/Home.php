@@ -11,6 +11,12 @@ class Home extends CI_Controller{
   function index()
   {
     $this->load->view('layout/header');
+    $this->load->view('layout/footer');
+  }
+
+  function praticando()
+  {
+    $this->load->view('praticando/praticando');
   }
 
 }
