@@ -125,7 +125,7 @@ class Migration_ extends CI_Migration {
         if(isset($Empresa[$chave])) {
           $id_Empresa = $Empresa[$chave];
         } else {
-          $this->db->insert('Problema', array(
+          $this->db->insert('Empresa', array(
             "NomeFantasia" => $d[11],
           ));
           $id_Empresa = $this->db->insert_id();
