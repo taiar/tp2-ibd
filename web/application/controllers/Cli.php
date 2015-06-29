@@ -81,8 +81,10 @@ class Migration_ extends CI_Migration {
     $Segmento = array();
     $EmpresaSegmento = array();
 
+    echo PHP_EOL;
     foreach ($arquivos as $arquivo) {
       $linhas = file(dirname(dirname(dirname(dirname(__FILE__)))) . "/dados/" . $arquivo);
+      echo $arquivo . PHP_EOL;
       foreach ($linhas as $linha) {
         $linha = utf8_encode($linha);
         $d = explode(";", $linha);
@@ -126,7 +128,7 @@ class Migration_ extends CI_Migration {
           $id_Empresa = $Empresa[$chave];
         } else {
           $this->db->insert('Empresa', array(
-            "NomeFantasia" => $d[11],
+            "NomeFantasia" => trim($d[11]),
           ));
           $id_Empresa = $this->db->insert_id();
           $Empresa[$chave] = $id_Empresa;
@@ -147,7 +149,7 @@ class Migration_ extends CI_Migration {
 
         // EmpresaSegmento
         $chave = $id_Empresa . $id_Segmento;
-        if(!$EmpresaSegmento[$chave]) {
+        if(!isset($EmpresaSegmento[$chave])) {
           $this->db->insert('EmpresaSegmento', array(
             "idEmpresa"   => $id_Empresa,
             "CodSegmento" => $id_Segmento,
@@ -164,7 +166,7 @@ class Migration_ extends CI_Migration {
 
         $DataAbertura = date_create_from_format("d/m/Y", $d[7]);
         $DataResposta = date_create_from_format("d/m/Y", $d[8]);
-        $DataFInalizado = date_create_from_format("d/m/Y", $d[9]);
+        $DataFinalizado = date_create_from_format("d/m/Y", $d[9]);
 
         // Reclamacao
         $this->db->insert('Reclamacao', array(
@@ -174,9 +176,9 @@ class Migration_ extends CI_Migration {
           "idProblema"             => $id_Problema,
           "AnoAbertura"            => $d[5],
           "MesAbertura"            => $d[6],
-          "DataAbertura"           => $DataAbertura->format("Y-m-d"),
-          "DataResposta"           => $DataResposta->format("Y-m-d"),
-          "DataFinalizado"         => $DataFinalizado->format("Y-m-d"),
+          "DataAbertura"           => ($DataAbertura) ? $DataAbertura->format("Y-m-d") : null,
+          "DataResposta"           => ($DataResposta) ? $DataResposta->format("Y-m-d") : null,
+          "DataFinalizado"         => ($DataFinalizado) ? $DataFinalizado->format("Y-m-d") : null,
           "TempoResposta"          => $d[10],
           "Assunto"                => $d[14],
           "ComoComprouContratou"   => $d[17],
