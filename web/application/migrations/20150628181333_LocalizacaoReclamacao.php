@@ -8,6 +8,7 @@ class Migration_LocalizacaoReclamacao extends CI_Migration {
     $this->dbforge->add_field(array(
             "idLocal" => array(
                     "type" => "INT",
+                    "auto_increment" => TRUE
             ),
             "Cidade" => array(
                     "type" => "VARCHAR",

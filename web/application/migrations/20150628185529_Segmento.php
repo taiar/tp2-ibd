@@ -8,6 +8,7 @@ class Migration_Segmento extends CI_Migration {
     $this->dbforge->add_field(array(
             "CodSegmento" => array(
                     "type" => "INT",
+                    "auto_increment" => TRUE
             ),
             "SegmentoDeMercado" => array(
                     "type" => "VARCHAR",

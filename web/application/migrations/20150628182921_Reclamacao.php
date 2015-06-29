@@ -8,6 +8,7 @@ class Migration_Reclamacao extends CI_Migration {
     $this->dbforge->add_field(array(
             "CodReclamacao" => array(
                     "type" => "INT",
+                    "auto_increment" => TRUE
             ),
             "idUsuario" => array(
                     "type" => "INT",

@@ -8,6 +8,7 @@ class Migration_Empresa extends CI_Migration {
     $this->dbforge->add_field(array(
             "idEmpresa" => array(
                     "type" => "INT",
+                    "auto_increment" => TRUE
             ),
             "NomeFantasia" => array(
                     "type" => "VARCHAR",

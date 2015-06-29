@@ -9,6 +9,7 @@ class Migration_Usuario extends CI_Migration {
             "idUsuario" => array(
                     "type" => "INT",
                     "unsigned" => TRUE,
+                    "auto_increment" => TRUE
             ),
             "Sexo" => array(
                     "type" => "VARCHAR",
