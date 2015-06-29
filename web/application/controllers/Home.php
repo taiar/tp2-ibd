@@ -14,9 +14,25 @@ class Home extends CI_Controller{
     $this->load->view('layout/footer');
   }
 
-  function praticando()
-  {
-    $this->load->view('praticando/praticando');
+  function praticando() {
+    include_once(APPPATH . "libraries/Encoding.php");
+    $dados = array();
+    $this->load->view('layout/header');
+    if($this->input->post('consulta')) {
+      $this->load->database();
+      $this->load->helper(array('resultado'));
+      $q = $this->db->query($this->input->post('consulta'))->result_array();
+
+      foreach ($q as $key => $value) {
+        foreach ($value as $chave => $valor) {
+          $q[$key][$chave] = \ForceUTF8\Encoding::fixUTF8($valor);
+        }
+      }
+
+      $dados['resultado'] = $q;
+      $dados['consulta'] = $this->input->post('consulta');
+    }
+    $this->load->view('praticando/praticando', $dados);
   }
 
 }

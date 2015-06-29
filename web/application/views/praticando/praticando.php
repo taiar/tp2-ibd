@@ -16,8 +16,13 @@
 </pre>
 
 <h3>Executar consulta:</h3>
-<textarea name="consulta" rows="12" cols="80"></textarea>
-<br>
-<input type="submit" name="name" value="Executar consulta">
+<form method="post">
+  <textarea name="consulta" rows="12" cols="80"><?php echo (isset($consulta)) ? $this->input->post('consulta') : "" ?></textarea><br>
+  <input type="submit" name="botao" value="Executar consulta">
+</form>
 
 <h4>Resultado:</h4>
+<?php if (isset($resultado)): ?>
+<?php echo print_resultado($resultado); ?>
+<!-- <?php echo print_r($resultado); ?> -->
+<?php endif; ?>
