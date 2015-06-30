@@ -73,6 +73,18 @@ class Migration_ extends CI_Migration {
       "2015-01.csv",
     );
 
+    /**
+     * Lista de correção de encoding
+     */
+    $lista = file(dirname(dirname(dirname(dirname(__FILE__)))) . "/dados/corrige_unico.txt");
+    $tabela = array();
+    foreach ($lista as $key) {
+      $exp = explode(";", $key);
+      $tabela[$exp[0]] = $exp[1];
+    }
+
+    // die(print_r($tabela));
+
     $this->load->database();
 
     $LocalizacaoReclamacao = array();
@@ -86,7 +98,9 @@ class Migration_ extends CI_Migration {
       $linhas = file(dirname(dirname(dirname(dirname(__FILE__)))) . "/dados/" . $arquivo);
       echo $arquivo . PHP_EOL;
       foreach ($linhas as $linha) {
-        $linha = utf8_encode($linha);
+        foreach ($tabela as $sub => $new)
+          $linha = str_replace($sub, $new, $linha);
+
         $d = explode(";", $linha);
 
         $id_LocalizacaoReclamacao = 0;
