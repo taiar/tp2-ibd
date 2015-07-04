@@ -7,7 +7,7 @@
     foreach ($array[0] as $chave => $value)
       $cabecalho[] = $chave;
 
-    echo '<table class="resultados" border=1 cellspacing=1 cellpadding=2>';
+    echo '<table class="table table-striped">';
     echo '<thead>';
     echo '<tr>';
     echo '<th>';

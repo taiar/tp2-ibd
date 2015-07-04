@@ -6,7 +6,6 @@ class Home extends CI_Controller{
   {
     parent::__construct();
     $this->load->helper(array('url'));
-    //Codeigniter : Write Less Do More
   }
 
   function index()
@@ -18,6 +17,11 @@ class Home extends CI_Controller{
     include_once(APPPATH . "libraries/Encoding.php");
     $dados = array();
     $this->load->view('layout/header');
+    $this->load->view('layout/menu_superior');
+    $this->load->view('layout/init_body');
+    $this->load->view('layout/menu_lateral');
+    $this->load->view('layout/init_yield');
+
     if($this->input->post('consulta')) {
       $this->load->database();
       $this->load->helper(array('resultado'));
@@ -33,6 +37,9 @@ class Home extends CI_Controller{
       $dados['consulta'] = $this->input->post('consulta');
     }
     $this->load->view('praticando/praticando', $dados);
+    $this->load->view('layout/end_yield');
+    $this->load->view('layout/end_body');
+    $this->load->view('layout/footer');
   }
 
 }
