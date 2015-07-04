@@ -11,7 +11,7 @@
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="<?php echo site_url('paginas/dados') ?>">Dados do trabalho</a></li>
+        <li><a href="<?php echo site_url('paginas/sobre') ?>">Sobre o trabalho</a></li>
         <li><a href="<?php echo site_url('paginas/er') ?>">Modelagem ER</a></li>
         <li><a href="<?php echo site_url('home/praticando') ?>">Praticando</a></li>
         <li><a href="<?php echo site_url('paginas/grupo') ?>">O Grupo</a></li>

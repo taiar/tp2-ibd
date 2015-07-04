@@ -10,7 +10,7 @@ class Home extends CI_Controller{
 
   function index()
   {
-    $this->load->view('layout/template');
+    redirect(base_url('home/praticando'));
   }
 
   function praticando() {
