@@ -12,6 +12,9 @@
 
     <link href="<?php echo base_url() ?>assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="<?php echo base_url() ?>assets/css/dashboard.css" rel="stylesheet">
+    <link href="<?php echo base_url() ?>assets/css/github.css" rel="stylesheet">
+    <!-- <link href="<?php echo base_url() ?>assets/css/hybrid.css" rel="stylesheet"> -->
+    <link href="<?php echo base_url() ?>assets/css/github-gist.css" rel="stylesheet">
 
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
