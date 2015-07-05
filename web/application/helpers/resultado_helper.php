@@ -3,6 +3,11 @@
   function print_resultado($array) {
     $n = count($array);
 
+    if ($n == 0) {
+      echo "<p>Nenhum registro foi encontrado pela consulta.</p>";
+      return;
+    }
+
     $cabecalho = array();
     foreach ($array[0] as $chave => $value)
       $cabecalho[] = $chave;
@@ -26,6 +31,6 @@
       echo '</tr>';
     }
     echo '</tbody>';
-    echo '';
-    echo '';
+    echo '</table>';
+
   }
