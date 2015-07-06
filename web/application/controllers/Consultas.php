@@ -63,7 +63,7 @@ ORDER BY Count(*) DESC",
 FROM Reclamacao R
 INNER JOIN Empresa E
   ON R.idEmpresa = E.idEmpresa
-WHERE R.AvalicaoReclamacao like 'Não resolvida'",
+WHERE R.AvalicaoReclamacao != 'Resolvida'",
       'view'       => "empty"
     ),
     // 6
