@@ -45,3 +45,6 @@
   <li><a href="http://www.libreoffice.org/" target="_blank">Libre Office</a></li>
   <li><a href="http://linuxmint.com/" target="_blank">Linux Mint</a></li>
 </ul>
+<p>
+  Repositório contendo o código do trabalho: <a href="https://github.com/taiar/tp2-ibd" target="_blank">https://github.com/taiar/tp2-ibd</a>
+</p>
