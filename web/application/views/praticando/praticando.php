@@ -17,7 +17,11 @@
 
 <h3>Executar consulta:</h3>
 <form method="post">
-  <textarea name="consulta" rows="12" cols="80"><?php echo (isset($consulta)) ? $this->input->post('consulta') : "" ?></textarea><br>
+  <textarea name="consulta" rows="12" cols="80"><?php echo (isset($consulta)) ? $this->input->post('consulta') : "" ?></textarea>
+  <?php if (isset($resultado)): ?>
+    <p><?php echo $this->benchmark->elapsed_time();?></p>
+  <?php endif; ?>
+  <br>
   <input type="submit" name="botao" value="Executar consulta">
 </form>
 <br>
